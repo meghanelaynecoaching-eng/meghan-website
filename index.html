@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meghan Elayne. The Embodied Method</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#161412;--charcoal:#1c1a17;--cream:#ffffff;--cream-deep:#f5f3ee;
+    --ink:#2a2722;--ink-soft:#4a463f;--orange:#c06a2c;--orange-light:#cf7d3a;
+    --white:#ffffff;--line:rgba(42,39,34,.16);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--cream);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 56px;}
+  .display{font-family:'Playfair Display',Georgia,serif;font-weight:500;line-height:1.05;letter-spacing:.01em;}
+  .eyebrow{text-transform:uppercase;letter-spacing:.32em;font-size:14px;font-weight:600;}
+  .accent{color:var(--orange);font-style:italic;}
+  .btn{display:inline-block;font-family:'Cormorant Garamond',serif;text-transform:uppercase;letter-spacing:.26em;font-size:14px;font-weight:600;padding:17px 40px;border:1px solid currentColor;text-decoration:none;transition:.25s ease;cursor:pointer;}
+  .btn,.btn.light,.btn.dark,.btn.fill{background:var(--white);color:var(--ink);border:1px solid rgba(42,39,34,.25);}
+  .btn:hover,.btn.light:hover,.btn.dark:hover,.btn.fill:hover{background:var(--orange);border-color:var(--orange);color:var(--white);}
+  section{padding:110px 0;}
+  .dark{background:var(--charcoal);color:var(--cream);}
+  .dark .display{color:var(--white);}
+  .beliefband{background:#161412;color:#fff;text-align:center;padding:140px 0;}
+  .bb-q{font-family:'Playfair Display',serif;font-style:italic;font-size:44px;line-height:1.32;color:#fff;max-width:980px;margin:0 auto;}
+  .bb-q span{color:var(--orange-light);}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 56px;max-width:1280px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);}
+  .brand-mono{width:34px;height:34px;flex:none;border:1.5px solid var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:15px;line-height:1;color:var(--ink);}
+  .brand-mono em{font-style:italic;color:var(--orange);}
+  .brand-name{font-family:'Playfair Display',serif;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:var(--ink);line-height:1;}
+  .brand{position:relative;}
+  .brand .sub{display:flex;justify-content:space-between;width:90%;margin:2px auto 0;font-size:9px;font-weight:400;color:var(--orange);}
+  .nav-links{display:flex;gap:38px;align-items:center;}
+  .nav-links a{text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:14px;font-weight:600;transition:.2s;}
+  .nav-links a:hover{color:var(--orange);}
+  .nav-links a.cta{background:var(--ink);color:#fff;border:1px solid var(--ink);padding:10px 22px;}
+  .nav-links a.cta:hover{background:var(--ink);color:var(--cream);}
+  .nav-burger{display:none;background:none;border:none;font-size:26px;line-height:1;color:var(--ink);cursor:pointer;padding:4px 6px;}
+
+  /* HERO — full-bleed photo, matches About / Private Coaching */
+  .hero{min-height:92vh;background:linear-gradient(rgba(10,9,8,.6),rgba(10,9,8,.72) 55%,rgba(10,9,8,.9)),url('meghan-laptop.jpg') center 42%/cover fixed;color:var(--cream);display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-align:center;padding:0 24px 13vh;}
+  .hero .wrap{max-width:1040px;margin:0 auto;padding:0;}
+  .hero .eyebrow{letter-spacing:.42em;color:var(--orange-light);}
+  .hero h1{font-family:'Playfair Display',serif;font-weight:500;font-size:84px;line-height:1;text-shadow:0 2px 30px rgba(0,0,0,.35);}
+  .hero h1 em{color:var(--orange-light);}
+  .hero .sub{max-width:620px;margin:0 auto;font-size:21px;line-height:1.6;opacity:.92;}
+  .hero .row{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+  .lead{font-size:46px;}.lead-xl{font-size:60px;}
+  .ph{background:var(--cream-deep) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect width="100" height="100" fill="%23ddd7c6"/></svg>');background-size:cover;background-position:center;aspect-ratio:4/5;display:flex;align-items:flex-end;padding:18px;color:var(--ink-soft);font-size:13px;letter-spacing:.1em;text-transform:uppercase;}
+  .dark .ph{color:rgba(233,229,218,.5);}
+
+  ul.checks{list-style:none;}
+  ul.checks li{position:relative;padding:14px 0 14px 42px;font-size:21px;line-height:1.45;}
+  ul.checks li:before{content:"\2713";position:absolute;left:0;top:13px;color:var(--orange);font-size:24px;font-weight:600;}
+
+  /* SERVICE CARD */
+  .svc{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--charcoal);color:var(--cream);}
+  .svc .txt{padding:90px 64px;}
+  .svc .txt .display{color:var(--white);}
+
+  /* SERVICE CARDS */
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;}
+  .scard{border:1px solid var(--orange);padding:48px 54px;display:flex;flex-direction:column;background:#fff;text-align:center;}
+  .scard .s-eyebrow{font-family:'Playfair Display',serif;font-size:25px;letter-spacing:.02em;margin-bottom:16px;line-height:1.2;min-height:60px;display:flex;align-items:center;justify-content:center;}
+  .scard .s-best{font-size:20px;color:var(--ink);font-style:italic;margin-bottom:20px;line-height:1.45;min-height:58px;}
+  .scard .s-label{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:10px;}
+  .scard ul{list-style:none;margin-bottom:20px;text-align:left;display:inline-block;}
+  .scard ul li{position:relative;padding:3px 0 3px 22px;font-size:18px;line-height:1.35;}
+  .scard ul li:before{content:"";position:absolute;left:0;top:12px;width:6px;height:6px;border-radius:50%;background:var(--orange);}
+  .svc ul.checks li{padding-top:7px;padding-bottom:7px;}
+  .scard .s-note{font-size:18px;color:var(--ink-soft);margin-bottom:24px;line-height:1.5;}
+  .scard .btn{margin-top:auto;align-self:center;}
+  /* SERVICES — editorial rows */
+  .svc-list{max-width:1040px;margin:6px auto 0;}
+  .svc-row{display:grid;grid-template-columns:1fr 1.25fr;gap:56px;padding:38px 0;border-top:1px solid var(--line);align-items:start;}
+  .svc-row:last-child{border-bottom:1px solid var(--line);}
+  .svc-row h3{font-family:'Playfair Display',serif;font-weight:500;font-size:32px;line-height:1.08;margin-bottom:14px;}
+  .svc-row .best{font-family:'Playfair Display',serif;font-style:italic;font-size:21px;color:var(--orange);line-height:1.45;margin-bottom:26px;}
+  .svc-row .label{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:16px;}
+  .svc-row ul{list-style:none;}
+  .svc-row li{position:relative;padding:5px 0 5px 26px;font-size:19px;line-height:1.5;color:var(--ink-soft);}
+  .svc-row li:before{content:"";position:absolute;left:0;top:17px;width:6px;height:6px;border-radius:50%;background:var(--orange);}
+  .svc-row .note{font-size:18px;color:var(--ink-soft);font-style:italic;margin-top:18px;line-height:1.5;}
+  .svc-row .coming{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;color:var(--ink);margin:-14px 0 24px;}
+  /* SERVICES — two side-by-side cards */
+  .svc-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;max-width:1040px;margin:6px auto 0;}
+  .svc-cols .card{border:1px solid var(--line);padding:44px 42px;display:flex;flex-direction:column;background:#fff;}
+  .svc-cols .card h3{font-family:'Playfair Display',serif;font-weight:500;font-size:30px;line-height:1.08;margin-bottom:12px;}
+  .svc-cols .card .best{font-family:'Playfair Display',serif;font-style:italic;font-size:21px;color:var(--orange);line-height:1.45;margin-bottom:24px;}
+  .svc-cols .card .label{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:600;color:var(--ink-soft);margin-bottom:14px;}
+  .svc-cols .card ul{list-style:none;margin-bottom:22px;}
+  .svc-cols .card li{position:relative;padding:5px 0 5px 26px;font-size:18px;line-height:1.5;color:var(--ink-soft);}
+  .svc-cols .card li:before{content:"";position:absolute;left:0;top:15px;width:6px;height:6px;border-radius:50%;background:var(--orange);}
+  .svc-cols .card .note{font-size:17px;color:var(--ink-soft);font-style:italic;margin:0 0 22px;line-height:1.5;}
+  .svc-cols .card .btn{align-self:center;margin-top:auto;}
+
+  /* LIVE CLASS */
+  .classes{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:54px;}
+  .class-card{border:1px solid var(--line);padding:42px 40px;background:var(--cream-deep);}
+  .class-card .day{font-family:'Playfair Display',serif;font-size:30px;margin-bottom:6px;}
+  .class-card .time{color:var(--orange);font-size:18px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px;}
+
+  /* TESTIMONIALS */
+  .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:56px;}
+  .tcard{border-top:2px solid var(--orange);padding-top:26px;font-size:19px;line-height:1.6;color:var(--cream);}
+  .tcard .who{margin-top:20px;font-style:italic;color:var(--orange);}
+
+  /* OPT-IN */
+  .optin{background:var(--cream-deep);}
+  .optin-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center;max-width:1100px;margin:0 auto;}
+  .optin-card{background:#fff;border:1px solid var(--orange);padding:44px 40px;}
+  .form{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px;}
+  .form input{font-family:'Cormorant Garamond',serif;font-size:18px;padding:16px 20px;border:1px solid var(--ink);background:transparent;min-width:240px;color:var(--ink);}
+  .form input::placeholder{color:var(--ink-soft);}
+  .form.col{flex-direction:column;align-items:stretch;}
+  .form.col input{min-width:0;width:100%;}
+  .form.col .btn{width:100%;text-align:center;}
+
+  footer{background:var(--black);color:var(--cream);padding:84px 0 46px;text-align:center;}
+  .foot-logo{font-family:'Playfair Display',serif;text-decoration:none;color:var(--cream);display:inline-block;line-height:1;}
+  .foot-logo .meg{text-transform:uppercase;letter-spacing:.14em;font-size:30px;}
+  .foot-logo .el{font-style:italic;font-size:32px;color:var(--orange-light);margin-left:.18em;}
+  .foot-tag{margin:20px auto 0;max-width:480px;color:rgba(233,229,218,.72);font-size:19px;line-height:1.6;font-style:italic;font-family:'Playfair Display',serif;padding:0 24px;}
+  .foot-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:14px 32px;margin:36px 0 0;padding:0 20px;}
+  .foot-nav a{color:rgba(233,229,218,.82);text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:13px;font-weight:600;transition:.2s;}
+  .foot-nav a:hover{color:var(--orange-light);}
+  .foot-divider{width:60px;height:1px;background:rgba(233,229,218,.2);margin:42px auto;}
+  .foot-social{display:flex;justify-content:center;gap:28px;}
+  .foot-social a{color:rgba(233,229,218,.72);text-decoration:none;text-transform:uppercase;letter-spacing:.14em;font-size:12px;transition:.2s;}
+  .foot-social a:hover{color:var(--orange-light);}
+  .foot-copy{margin-top:30px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(233,229,218,.5);}
+
+  /* CLASS DETAILS */
+  .class-details{max-width:640px;margin:42px auto 0;border:1px solid rgba(233,229,218,.22);text-align:left;}
+  .cd-row{display:flex;gap:24px;padding:18px 30px;border-bottom:1px solid rgba(233,229,218,.14);}
+  .cd-row:last-child{border-bottom:none;}
+  .cd-label{flex:none;width:108px;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:600;color:var(--orange-light);padding-top:4px;}
+  .cd-val{font-size:19px;color:var(--cream);line-height:1.45;}
+  /* PRICING MODAL */
+  .modal-overlay{position:fixed;inset:0;background:rgba(14,12,11,.74);backdrop-filter:blur(3px);z-index:100;display:none;align-items:center;justify-content:center;padding:24px;}
+  .modal-overlay.open{display:flex;}
+  .modal{background:var(--cream);color:var(--ink);max-width:560px;width:100%;max-height:90vh;overflow:auto;padding:52px 50px 46px;position:relative;border-top:4px solid var(--orange);text-align:left;}
+  .modal .close{position:absolute;top:14px;right:22px;font-size:30px;line-height:1;color:var(--ink-soft);background:none;border:none;cursor:pointer;}
+  .modal .close:hover{color:var(--orange);}
+  .modal h3{font-family:'Playfair Display',serif;font-weight:500;font-size:34px;margin-bottom:4px;}
+  .price-table{width:100%;border-collapse:collapse;margin:22px 0 8px;}
+  .price-table th{text-transform:uppercase;letter-spacing:.12em;font-size:12px;color:var(--ink-soft);padding:0 0 12px;border-bottom:1px solid var(--line);font-weight:600;}
+  .price-table td{padding:15px 0;border-bottom:1px solid var(--line);font-size:19px;}
+  .price-table .opt{font-family:'Playfair Display',serif;}
+  .price-table .cost{text-align:right;color:var(--orange);font-weight:600;white-space:nowrap;}
+  .price-table .per{text-align:right;color:var(--ink-soft);white-space:nowrap;}
+  .free-banner{background:var(--cream-deep);border:1px solid var(--orange);padding:22px 26px;text-align:center;margin:22px 0 26px;}
+  .free-banner .ttl{font-family:'Playfair Display',serif;font-size:22px;color:var(--ink);margin-bottom:6px;}
+  .free-banner p{font-size:17px;color:var(--ink-soft);line-height:1.5;}
+  /* APPLICATION MODAL */
+  .appmodal{background:var(--cream);width:100%;max-width:760px;height:88vh;position:relative;border-top:4px solid var(--orange);display:flex;flex-direction:column;overflow:hidden;}
+  .appmodal .bar{display:flex;align-items:center;justify-content:space-between;padding:16px 22px;border-bottom:1px solid var(--line);background:#fff;}
+  .appmodal .bar .t{font-family:'Playfair Display',serif;font-size:20px;color:var(--ink);}
+  .appmodal .bar .x{font-size:28px;line-height:1;color:var(--ink-soft);background:none;border:none;cursor:pointer;}
+  .appmodal .bar .x:hover{color:var(--orange);}
+  .appmodal iframe{flex:1;width:100%;border:0;background:#fff;}
+  .appmodal .appform{flex:1;overflow-y:auto;padding:30px 38px 38px;}
+  .appform .sec{font-family:'Playfair Display',serif;font-size:21px;color:var(--orange);margin:30px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+  .appform .sec:first-of-type{margin-top:8px;}
+  .appform .grp{margin-bottom:22px;}
+  .appform label.q{display:block;font-size:18px;color:var(--ink);margin-bottom:10px;line-height:1.4;}
+  .appform .req{color:var(--orange);}
+  .appform input[type=text],.appform input[type=email],.appform textarea,.appform select{width:100%;font-family:'Cormorant Garamond',serif;font-size:17px;padding:12px 14px;border:1px solid var(--line);background:#fff;color:var(--ink);}
+  .appform textarea{min-height:110px;resize:vertical;}
+  .appform .opt{display:flex;align-items:flex-start;gap:10px;font-size:17px;color:var(--ink-soft);padding:5px 0;cursor:pointer;}
+  .appform .opt input{margin-top:6px;flex:none;}
+  .appform .submit{display:inline-block;background:var(--orange);color:#fff;border:1px solid var(--orange);text-transform:uppercase;letter-spacing:.2em;font-size:14px;font-weight:600;padding:15px 38px;cursor:pointer;font-family:'Cormorant Garamond',serif;margin-top:8px;transition:.2s;}
+  .appform .submit:hover{background:var(--ink);border-color:var(--ink);}
+
+  @media(max-width:1100px){.svc-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:900px){
+    .two,.svc,.classes,.tgrid,.svc-grid,.optin-grid{grid-template-columns:1fr;}
+    .svc-row{grid-template-columns:1fr;gap:20px;padding:38px 0;}
+    .bb-q{font-size:30px;}.beliefband{padding:90px 0;}
+    .hero{padding:90px 26px;}.hero h1{font-size:46px;}
+    .wrap,.nav-inner{padding-left:26px;padding-right:26px;}
+    .nav-burger{display:block;}.nav-inner{position:relative;}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;gap:0;align-items:stretch;padding:6px 0;border-bottom:1px solid var(--line);box-shadow:0 10px 24px rgba(0,0,0,.08);}.nav-links.open{display:flex;}.nav-links a{padding:13px 26px;width:100%;}.nav-links a.cta{border:none;padding:13px 26px;}
+    .svc .txt{padding:56px 28px;}
+    .brand-name{font-size:12px;letter-spacing:.1em;}
+  }
+
+  /* ANNOUNCEMENT BAR */
+  .promo-bar{display:block;background:var(--orange);overflow:hidden;text-decoration:none;}
+  .promo-track{display:flex;width:max-content;animation:promo-scroll 32s linear infinite;}
+  .promo-track .u{flex:none;padding:10px 0;color:#fff;font-family:'Cormorant Garamond',serif;font-size:13px;text-transform:uppercase;letter-spacing:.22em;font-weight:600;white-space:nowrap;}
+  .promo-track .u i{font-style:normal;opacity:.6;margin:0 22px;}
+  .promo-bar:hover .promo-track{animation-play-state:paused;}
+  @keyframes promo-scroll{to{transform:translateX(-50%);}}
+  /* IG FEED */
+  .ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:52px;max-width:1100px;margin-left:auto;margin-right:auto;padding:0 24px;}
+  .ig-tile{position:relative;aspect-ratio:1/1;display:flex;align-items:flex-end;padding:18px;text-decoration:none;overflow:hidden;color:var(--white);}
+  .ig-tile .cap{position:relative;z-index:2;font-family:'Playfair Display',serif;font-size:16px;line-height:1.25;opacity:0;transform:translateY(8px);transition:.3s ease;}
+  .ig-tile .igmark{position:absolute;top:16px;left:18px;z-index:2;text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:600;opacity:0;transition:.3s ease;}
+  .ig-tile:before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(22,20,18,0) 35%,rgba(22,20,18,.78) 100%);opacity:0;transition:.3s ease;}
+  .ig-tile:hover:before{opacity:1;}
+  .ig-tile:hover .cap{opacity:1;transform:translateY(0);}
+  .ig-tile:hover .igmark{opacity:.9;}
+  .ig-tile.t1{background:#1c1a17 url('meghan-mirror.jpg') center/cover;}
+  .ig-tile.t2{background:#1c1a17 url('meghan-chair.jpg') center/cover;}
+  .ig-tile.t3{background:#1c1a17 url('meghan-reading.jpg') center/cover;}
+  .ig-tile.t4{background:#1c1a17 url('meghan-laptop.jpg') center/cover;}
+  @media(max-width:900px){.ig-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:760px){
+    section[style*="fixed"]{background-attachment:scroll !important;}
+    .two,.svc,.svc-grid,.svc-row,.svc-cols,.classes,.tgrid,.optin-grid,.ig-grid{grid-template-columns:1fr;}
+    .two{gap:28px;}.optin-grid{gap:28px;}
+    .ph{min-height:260px;}
+    .hero h1{font-size:38px;}
+    .lead-xl{font-size:30px;}
+    section{padding:56px 0;}
+    .beliefband{padding:56px 0;}
+    .svc .txt{padding:56px 28px;}
+    .wrap{padding:0 22px;}
+    .hero{background-attachment:scroll;}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-mono">M<em>E</em></span><span class="brand-name">Meghan Elayne Coaching</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="#membership">Work With Me</a>
+      <a href="membership.html">Membership</a>
+      <a href="private-coaching.html">Private Coaching</a>
+      <a href="contact.html" class="cta">Contact</a>
+    </nav>
+    <button class="nav-burger" aria-label="Menu" onclick="this.parentNode.querySelector('.nav-links').classList.toggle('open')">&#9776;</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow" style="font-size:13px;letter-spacing:.42em;margin-bottom:22px;color:var(--orange-light);">The Embodied Method</div>
+    <h1 class="display">Strong is the <em>strategy</em>.</h1>
+    <p class="display" style="font-style:italic;color:var(--orange-light);font-size:28px;margin:32px 0 32px;">For women who are done with quick fixes.</p>
+    <a href="#membership" class="btn light" style="margin-top:10px;">Explore Coaching</a>
+  </div>
+</section>
+
+<!-- ANNOUNCEMENT BAR -->
+<a href="membership.html" class="promo-bar" aria-label="Become a founding member of The Embodied Method">
+  <div class="promo-track">
+    <span class="u">The Embodied Method Monthly Membership <i>&middot;</i> Become a Founding Member <i>&middot;</i></span>
+    <span class="u">The Embodied Method Monthly Membership <i>&middot;</i> Become a Founding Member <i>&middot;</i></span>
+    <span class="u">The Embodied Method Monthly Membership <i>&middot;</i> Become a Founding Member <i>&middot;</i></span>
+    <span class="u">The Embodied Method Monthly Membership <i>&middot;</i> Become a Founding Member <i>&middot;</i></span>
+    <span class="u">The Embodied Method Monthly Membership <i>&middot;</i> Become a Founding Member <i>&middot;</i></span>
+    <span class="u">The Embodied Method Monthly Membership <i>&middot;</i> Become a Founding Member <i>&middot;</i></span>
+    <span class="u">The Embodied Method Monthly Membership <i>&middot;</i> Become a Founding Member <i>&middot;</i></span>
+    <span class="u">The Embodied Method Monthly Membership <i>&middot;</i> Become a Founding Member <i>&middot;</i></span>
+  </div>
+</a>
+
+<!-- BELIEF BAND -->
+<section class="beliefband">
+  <div class="wrap">
+    <p class="bb-q">Health was never supposed to feel like punishment.<br>It's supposed to feel like <span>coming home</span>.</p>
+  </div>
+</section>
+
+<!-- ABOUT TEASER -->
+<section id="about-teaser">
+  <div class="wrap two">
+    <div class="ph" style="aspect-ratio:4/5;background-image:url('meghan-portrait.jpg');background-position:center top;"></div>
+    <div>
+      <div class="eyebrow accent" style="margin-bottom:18px;">Meet your coach</div>
+      <h2 class="display lead">Hi, I'm <span class="accent">Meghan</span>.</h2>
+      <p class="display accent" style="font-size:22px;margin:14px 0 0;">Strength. Fuel. Freedom.</p>
+      <p style="margin:24px 0;font-size:21px;color:var(--ink-soft);line-height:1.7;">For over a decade, I lived in the restrict, binge, and start-over cycle, convinced that if I just had more discipline I'd finally get it right. I didn't. Everything changed when I stopped training to shrink and started training to feel strong.</p>
+      <p style="margin-bottom:32px;font-size:21px;color:var(--ink-soft);line-height:1.7;">Now I help women in their 30s and 40s do the same. Not through restriction or punishment, but through real strength training, nutrition you actually understand, and the mindset to make it last. Because health was never meant to feel like a fight. It's supposed to feel like coming home.</p>
+      <a href="about.html" class="btn dark">More About Meghan</a>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED: MONTHLY MEMBERSHIP (primary offer) -->
+<section id="membership" style="padding:0;scroll-margin-top:80px;">
+  <div class="svc">
+    <div class="ph" style="aspect-ratio:auto;background-image:url('mb-coach.jpg');background-position:center 28%;"></div>
+    <div class="txt">
+      <div class="eyebrow" style="color:var(--orange-light);margin-bottom:18px;">The Embodied Method · Monthly Membership</div>
+      <h2 class="display lead" style="font-size:38px;">Strength, nutrition, and mindset. Every month.</h2>
+      <p style="margin:24px 0;font-size:21px;opacity:.9;line-height:1.7;">The Embodied Method is the heart of how I coach: one cohesive membership that brings training, nutrition, and mindset together, with a community of women doing it right alongside you. No quick fixes and no starting over, just steady, real progress you can actually keep.</p>
+      <ul class="checks" style="margin-bottom:30px;columns:2;column-gap:40px;">
+        <li style="break-inside:avoid;">A new monthly strength program</li>
+        <li style="break-inside:avoid;">Evidence-based nutrition</li>
+        <li style="break-inside:avoid;">Weekly mindset coaching</li>
+        <li style="break-inside:avoid;">Two group coaching calls</li>
+        <li style="break-inside:avoid;">A private community</li>
+        <li style="break-inside:avoid;">Personalized onboarding</li>
+      </ul>
+      <div style="font-family:'Playfair Display',serif;font-style:italic;font-size:19px;color:var(--orange-light);margin-bottom:22px;">Founding doors open October 1, 2026</div>
+      <a href="membership.html" class="btn light">Become a Founding Member</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES INTRO -->
+<section id="services" style="padding-bottom:50px;">
+  <div class="wrap" style="text-align:center;">
+    <div class="eyebrow accent" style="margin-bottom:16px;">More ways to work together</div>
+    <h2 class="display lead-xl">Not sure how to<br>work with me?</h2>
+    <p style="max-width:830px;margin:24px auto 0;font-size:21px;color:var(--ink-soft);line-height:1.7;">Whether you want one-on-one coaching, nutrition support, or just a clear plan to follow, I've got an option that fits the level of guidance you need. Every one is built to help you develop strength, confidence, and long-term habits, not quick fixes.</p>
+  </div>
+</section>
+
+<!-- FEATURED: PRIVATE COACHING -->
+<section style="padding:0;">
+  <div class="svc">
+    <div class="txt">
+      <div class="eyebrow" style="color:var(--orange-light);margin-bottom:18px;">Private Coaching · 6 Months · The Embodied Method</div>
+      <h2 class="display lead" style="font-size:38px;">My highest level of support</h2>
+      <p style="margin:24px 0;font-size:21px;opacity:.9;line-height:1.7;">Best for women who want a full transformation with guidance every step of the way. This isn't a meal plan handed over a portal, it's a full coaching relationship. Six months to stop guessing, stop starting over, and finally build something that lasts.</p>
+      <ul class="checks" style="margin-bottom:34px;columns:2;column-gap:40px;">
+        <li style="break-inside:avoid;">Personalized nutrition coaching</li>
+        <li style="break-inside:avoid;">Online weekly check-ins</li>
+        <li style="break-inside:avoid;">Monthly calls</li>
+        <li style="break-inside:avoid;">24/7 messaging support</li>
+        <li style="break-inside:avoid;">Custom strength training program</li>
+        <li style="break-inside:avoid;">Technique feedback</li>
+      </ul>
+      <a href="#" onclick="openApply();return false;" class="btn light">Apply for Private Coaching</a>
+    </div>
+    <div class="ph" style="aspect-ratio:auto;background-image:url('meghan-mirror.jpg');"></div>
+  </div>
+</section>
+
+<!-- OTHER SERVICES -->
+<section>
+  <div class="wrap">
+    <div class="svc-cols">
+      <div class="card">
+        <h3>Nutrition Strategy Call</h3>
+        <p class="best">A 90-minute deep dive into your nutrition and lifestyle.</p>
+        <p class="label">During our session, we'll:</p>
+        <ul>
+          <li>Break down what's really going on with your nutrition and lifestyle</li>
+          <li>Clarify what actually matters for your goals right now</li>
+          <li>Discuss practical strategies you can implement immediately</li>
+          <li>Create a clear, realistic plan for next steps</li>
+        </ul>
+        <a href="#" onclick="openFit('nutrition');return false;" class="btn dark">Book a Call</a>
+      </div>
+      <div class="card">
+        <h3>Custom Training Program</h3>
+        <p class="best">For women who want a personalized program to follow independently.</p>
+        <p class="label">Includes:</p>
+        <ul>
+          <li>A fully customized program in a user-friendly app</li>
+          <li>Progressive overload structure</li>
+          <li>Designed to fit your goals, life, and schedule</li>
+          <li>Weekly online feedback and coaching</li>
+          <li>Direct messaging and coach support</li>
+        </ul>
+        <p class="note">Ideal if you want structure but prefer to train solo.</p>
+        <a href="#" onclick="openFit('custom');return false;" class="btn dark">Get Started</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:50px;font-size:21px;color:var(--ink-soft);">Not sure which option is right for you? <a href="#" onclick="openFit();return false;" style="color:var(--orange);">Let's figure out the best fit.</a></p>
+  </div>
+</section>
+
+<!-- LIVE CLASSES -->
+<section id="classes" class="dark" style="padding:80px 0;">
+  <div class="wrap" style="text-align:center;">
+    <div class="eyebrow" style="color:var(--orange-light);margin-bottom:34px;">Train with me live · In person</div>
+    <h2 class="display" style="font-size:40px;">Weekly Live Classes</h2>
+    <p style="max-width:680px;margin:18px auto 0;opacity:.92;font-size:20px;line-height:1.65;">The Embodied Strength Collective is a fully coached strength training class designed specifically for women who are ready to build real, lasting strength. No cardio, no fluff, just solid technique and progressive results.</p>
+    <p style="max-width:680px;margin:18px auto 0;opacity:.92;font-size:20px;line-height:1.65;">Whether you've never touched a barbell or you're simply looking for a coached environment to level up your lifting, this is your place.</p>
+
+    <div style="margin:30px auto 0;display:inline-flex;align-items:center;gap:12px;border:1.5px solid var(--orange-light);border-radius:999px;padding:11px 30px;color:var(--orange-light);text-transform:uppercase;letter-spacing:.24em;font-size:15px;font-weight:600;">First Class Free</div>
+
+    <div class="class-details">
+      <div class="cd-row"><span class="cd-label">Where</span><span class="cd-val">Frontline Functional Training, Port Coquitlam</span></div>
+      <div class="cd-row"><span class="cd-label">When</span><span class="cd-val">Monday &amp; Wednesday · 7:00–8:00 AM</span></div>
+      <div class="cd-row"><span class="cd-label">Format</span><span class="cd-val">Strength training only, no cardio components</span></div>
+      <div class="cd-row"><span class="cd-label">Structure</span><span class="cd-val">Progressive overload, week to week</span></div>
+    </div>
+
+    <div style="margin-top:34px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="#" onclick="openPricing();return false;" class="btn light">View Pricing</a>
+      <a href="#" onclick="openBooking();return false;" class="btn light" style="border-color:var(--orange-light);color:var(--orange-light);">Book Free Class</a>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="dark" style="background:linear-gradient(rgba(8,7,6,.90),rgba(8,7,6,.94)),url('pc-flatlay.jpg') center/cover fixed;">
+  <div class="wrap">
+    <div style="text-align:center;" class="eyebrow accent">Client Words</div>
+    <h2 class="display lead" style="text-align:center;margin-top:14px;">Real women, real change</h2>
+    <div class="tgrid">
+      <div class="tcard">
+        "I wanted a path to a more balanced life, and Meghan helped me set realistic goals and actually reach them. On the days I couldn't stick to the plan, she taught me how to dial it back instead of giving up. My biggest takeaway? Self-care doesn't have to wait for the perfect day."
+      </div>
+      <div class="tcard">
+        "There's so much confusing information online about what to eat. Meghan is a real advocate for body positivity and for meeting you where you are. She helped me build habits I still keep today, and I feel healthier for it. I'd encourage anyone to spend time with her to learn what your body actually needs."
+      </div>
+      <div class="tcard">
+        "I've tried a lot of diet and nutrition apps, but none as helpful as working one-on-one with Meghan. She helped me set boundaries around food that I never had before. I feel like I have food freedom now, and I don't feel so rigid or extreme in my thinking."
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:52px;">
+      <a href="testimonials.html" class="btn light">Read More Client Stories</a>
+    </div>
+  </div>
+</section>
+
+<!-- LEAD MAGNET OPT-IN -->
+<section id="optin" class="optin">
+  <div class="wrap optin-grid">
+    <div>
+      <div class="eyebrow accent" style="margin-bottom:16px;">Free 30-Day Email Series</div>
+      <h2 class="display lead">Stop overthinking food and start feeling <span class="accent">in control</span> again.</h2>
+      <p style="margin:26px 0 18px;font-size:18px;color:var(--ink-soft);line-height:1.7;">You don't need another plan. You need something that actually makes sense and fits your life.</p>
+      <p style="font-size:18px;color:var(--ink-soft);line-height:1.7;">A <strong style="color:var(--ink);">free 30-day email series</strong> walking you through the basics of nutrition and training, simple, realistic, and easy to follow. No extremes. No starting over every Monday.</p>
+    </div>
+    <div class="optin-card">
+      <div class="display" style="font-size:28px;margin-bottom:8px;">Start the 30 days</div>
+      <p style="color:var(--ink-soft);font-size:18px;line-height:1.5;margin-bottom:8px;">Drop your details and Day 1 lands in your inbox.</p>
+      <form class="form col" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" name="Lead Funnel - 30 Days to Progressing" >
+        <input type="hidden" name="form-name" value="Lead Funnel - 30 Days to Progressing">
+        <input type="hidden" name="segment" value="Lead Funnel: 30 Days to Progressing">
+        <input type="hidden" name="subject" value="New signup: 30-Day Email Series">
+        <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+        <input type="text" name="first_name" placeholder="First name" required>
+        <input type="email" name="email" placeholder="Email address" required>
+        <button type="submit" class="btn fill">Send Me Day 1</button>
+        <div class="thanks" style="display:none;margin-top:14px;text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--ink);margin-bottom:4px;">You're in.</div><div style="color:var(--ink-soft);font-size:16px;line-height:1.5;">Day 1 is on its way to your inbox, keep an eye out.</div></div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING MODAL -->
+<div class="modal-overlay" id="pricingModal" onclick="if(event.target===this)closePricing()">
+  <div class="modal">
+    <button class="close" onclick="closePricing()" aria-label="Close">&times;</button>
+    <div class="eyebrow" style="color:var(--orange);margin-bottom:10px;">Live Class Pricing</div>
+    <h3>Passes &amp; Drop-Ins</h3>
+    <table class="price-table">
+      <thead><tr><th>Option</th><th style="text-align:right;">Cost</th><th style="text-align:right;">Per Class</th></tr></thead>
+      <tbody>
+        <tr><td class="opt">Drop In</td><td class="cost">$25</td><td class="per">$25</td></tr>
+        <tr><td class="opt">5-Session Punch Pass</td><td class="cost">$100</td><td class="per">$20</td></tr>
+        <tr><td class="opt">10-Session Punch Pass</td><td class="cost">$180</td><td class="per">$18</td></tr>
+      </tbody>
+    </table>
+    <div class="free-banner">
+      <div class="ttl">🎉 Your First Class is FREE</div>
+      <p>Not sure if it's the right fit? Come try it. No commitment, no pressure, just show up and lift.</p>
+    </div>
+    <div style="text-align:center;">
+      <p class="display" style="font-size:24px;margin-bottom:16px;">Ready to get started?</p>
+      <a href="#" onclick="openBooking();return false;" class="btn dark">Book Your Free First Class</a>
+      <p style="margin-top:18px;font-size:16px;color:var(--ink-soft);">Questions? Reach out, Meghan would love to hear from you.</p>
+    </div>
+  </div>
+</div>
+
+<!-- BOOK FREE CLASS MODAL -->
+<div class="modal-overlay" id="bookModal" onclick="if(event.target===this)closeBooking()">
+  <div class="modal" style="max-width:470px;">
+    <button class="close" onclick="closeBooking()" aria-label="Close">&times;</button>
+    <div class="eyebrow" style="color:var(--orange);margin-bottom:10px;">Free First Class</div>
+    <h3>Book your free class</h3>
+    <p style="color:var(--ink-soft);font-size:18px;line-height:1.55;margin:8px 0 4px;">Drop your name and email and Meghan will follow up with the next steps. No commitment, just come lift.</p>
+    <form class="form col" style="margin-top:20px;" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" name="Inquiry - Free Class" >
+      <input type="hidden" name="form-name" value="Inquiry - Free Class">
+      <input type="hidden" name="segment" value="Inquiry: Free Class">
+      <input type="hidden" name="subject" value="New booking: Free Class">
+      <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+      <input type="text" name="first_name" placeholder="First name" required>
+      <input type="email" name="email" placeholder="Email address" required>
+      <button type="submit" class="btn fill">Reserve My Spot</button>
+      <div class="thanks" style="display:none;margin-top:14px;text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--ink);margin-bottom:4px;">You're booked in.</div><div style="color:var(--ink-soft);font-size:16px;line-height:1.5;">Meghan will follow up shortly with the details. Just come lift.</div></div>
+    </form>
+  </div>
+</div>
+
+<!-- APPLICATION MODAL -->
+<div class="modal-overlay" id="applyModal" onclick="if(event.target===this)closeApply()">
+  <div class="appmodal">
+    <div class="bar"><div class="t">Apply for Private Coaching</div><button class="x" onclick="closeApply()" aria-label="Close">&times;</button></div>
+    <div class="appform">
+      <form id="applyForm" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" name="Inquiry - Private Coaching" >
+        <input type="hidden" name="form-name" value="Inquiry - Private Coaching">
+        <input type="hidden" name="segment" value="Inquiry: Private Coaching">
+        <input type="hidden" name="subject" value="New Private Coaching Application">
+        <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+        <p style="color:var(--ink-soft);font-size:16px;margin-bottom:6px;">A few questions so Meghan can find the right fit for you.</p>
+        <div class="sec">Basic Info</div>
+        <div class="grp"><label class="q">Full name <span class="req">*</span></label><input type="text" name="full_name" required></div>
+        <div class="grp"><label class="q">Email <span class="req">*</span></label><input type="email" name="email" required></div>
+        <div class="grp"><label class="q">Instagram handle</label><input type="text" name="instagram" placeholder="@yourhandle"></div>
+        <div class="grp"><label class="q">Age <span class="req">*</span></label><input type="text" name="age" required></div>
+        <div class="sec">Your Goals</div>
+        <div class="grp"><label class="q">What best describes your primary goal right now? <span class="req">*</span></label>
+          <label class="opt"><input type="radio" name="goal" required> Fat loss or body recomposition</label>
+          <label class="opt"><input type="radio" name="goal"> Getting stronger and building muscle</label>
+          <label class="opt"><input type="radio" name="goal"> Improving my relationship with food</label>
+          <label class="opt"><input type="radio" name="goal"> Performance or athletic goals</label>
+          <label class="opt"><input type="radio" name="goal"> General health, energy, and consistency</label>
+          <label class="opt"><input type="radio" name="goal"> I'm not sure, I just know I'd like support</label>
+        </div>
+        <div class="grp"><label class="q">What are you struggling with most right now? <span class="req">*</span></label>
+          <label class="opt"><input type="checkbox" name="struggles"> Knowing how much to eat</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Consistency with nutrition</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Emotional eating or guilt around food</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Confusion in the gym</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Plateau or stalled progress</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Lack of accountability</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Time and overwhelm</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Hormones, cycle, or energy</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Other</label>
+        </div>
+        <div class="grp"><label class="q">How long have you been dealing with this? <span class="req">*</span></label>
+          <label class="opt"><input type="radio" name="howlong" required> Less than 3 months</label>
+          <label class="opt"><input type="radio" name="howlong"> 3 to 6 months</label>
+          <label class="opt"><input type="radio" name="howlong"> 6 to 12 months</label>
+          <label class="opt"><input type="radio" name="howlong"> Over a year</label>
+        </div>
+        <div class="sec">Current Situation</div>
+        <div class="grp"><label class="q">Are you currently following a structured program for nutrition or training? <span class="req">*</span></label>
+          <label class="opt"><input type="radio" name="current" required> Yes, both nutrition and training</label>
+          <label class="opt"><input type="radio" name="current"> Yes, nutrition only</label>
+          <label class="opt"><input type="radio" name="current"> Yes, training only</label>
+          <label class="opt"><input type="radio" name="current"> No, not currently</label>
+        </div>
+        <div class="grp"><label class="q">On a scale of 1 to 10, how ready are you to commit to change right now? <span class="req">*</span></label>
+          <select name="readiness" required><option value="" disabled selected>Select…</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select>
+        </div>
+        <div class="grp"><label class="q">What kind of support do you feel you need most? Tell me what you've tried and what feels like it's missing. <span class="req">*</span></label>
+          <textarea name="message" required></textarea>
+        </div>
+        <div class="sec">Coaching Fit</div>
+        <div class="grp"><label class="q">If it's a good fit, are you ready to invest in coaching support? <span class="req">*</span></label>
+          <label class="opt"><input type="radio" name="invest" required> Yes</label>
+          <label class="opt"><input type="radio" name="invest"> Possibly, I'd like to discuss</label>
+          <label class="opt"><input type="radio" name="invest"> Not at this time</label>
+        </div>
+        <button type="submit" class="submit">Submit Application</button>
+      </form>
+      <div class="apl-thanks" style="display:none;text-align:center;padding:36px 10px;">
+        <div style="font-family:'Playfair Display',serif;font-size:26px;margin-bottom:10px;">Thank you.</div>
+        <p style="color:var(--ink-soft);font-size:18px;line-height:1.6;">Your application is in. Meghan reviews each one personally and will be in touch soon.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FIND YOUR FIT MODAL -->
+<div class="modal-overlay" id="fitModal" onclick="if(event.target===this)closeFit()">
+  <div class="appmodal">
+    <div class="bar"><div class="t">Let's find out if we're a fit</div><button class="x" onclick="closeFit()" aria-label="Close">&times;</button></div>
+    <div class="appform">
+      <form id="fitForm" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" name="Inquiry - Find Your Fit" >
+        <input type="hidden" name="form-name" value="Inquiry - Find Your Fit">
+        <input type="hidden" name="segment" value="Inquiry: Find Your Fit">
+        <input type="hidden" name="subject" value="New Find Your Fit submission">
+        <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+        <p style="color:var(--ink-soft);font-size:16px;line-height:1.5;margin-bottom:14px;">Not sure which coaching option is right for you? You're in the right place.</p>
+        <p style="color:var(--ink-soft);font-size:16px;line-height:1.5;margin-bottom:6px;">A few quick questions about your goals, your current challenges, and the support you're after, so I can point you to the best next step, or invite you to book a call if it's a good fit.</p>
+        <input type="hidden" id="fitEntry" name="entry_point" value="">
+        <div class="sec">The basics</div>
+        <div class="grp"><label class="q">First name <span class="req">*</span></label><input type="text" name="first_name" required></div>
+        <div class="grp"><label class="q">Age <span class="req">*</span></label><input type="number" name="age" min="16" max="99" required></div>
+        <div class="grp"><label class="q">Email <span class="req">*</span></label><input type="email" name="email" required></div>
+        <div class="grp"><label class="q">Instagram handle</label><input type="text" name="instagram" placeholder="@yourhandle"></div>
+
+        <div class="sec">What you're after</div>
+        <div class="grp"><label class="q">Which kind of support are you most drawn to? <span class="req">*</span></label>
+          <label class="opt"><input type="radio" name="support" value="1:1 Private Coaching" required> 1:1 Private Coaching (training and nutrition, fully supported)</label>
+          <label class="opt"><input type="radio" name="support" value="Nutrition Strategy Call"> A Nutrition Strategy Call (one 90-minute deep dive)</label>
+          <label class="opt"><input type="radio" name="support" value="Custom Training Program"> A Custom Training Program (fully programmed, train on your own)</label>
+          <label class="opt"><input type="radio" name="support" value="Not sure"> Not sure yet, help me find the right fit</label>
+        </div>
+        <div class="grp"><label class="q">What's your main goal right now? <span class="req">*</span></label>
+          <label class="opt"><input type="radio" name="goal" required> Fat loss or body recomposition</label>
+          <label class="opt"><input type="radio" name="goal"> Getting stronger and building muscle</label>
+          <label class="opt"><input type="radio" name="goal"> Improving my relationship with food</label>
+          <label class="opt"><input type="radio" name="goal"> Performance or athletic goals</label>
+          <label class="opt"><input type="radio" name="goal"> General health, energy, and consistency</label>
+          <label class="opt"><input type="radio" name="goal"> I'm not sure, I just know I want support</label>
+        </div>
+
+        <div class="sec">Where you're at</div>
+        <div class="grp"><label class="q">What are you struggling with most right now? <span class="req">*</span></label>
+          <label class="opt"><input type="checkbox" name="struggles"> Knowing how much to eat</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Staying consistent with nutrition</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Emotional eating or guilt around food</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Feeling lost or unsure in the gym</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Plateau or stalled progress</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Lack of accountability</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Time and overwhelm</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Hormones, cycle, or energy</label>
+          <label class="opt"><input type="checkbox" name="struggles"> Other</label>
+        </div>
+        <div class="grp"><label class="q">How long have you been working on this? <span class="req">*</span></label>
+          <label class="opt"><input type="radio" name="howlong" required> Less than 3 months</label>
+          <label class="opt"><input type="radio" name="howlong"> 3 to 6 months</label>
+          <label class="opt"><input type="radio" name="howlong"> 6 to 12 months</label>
+          <label class="opt"><input type="radio" name="howlong"> Over a year</label>
+        </div>
+        <div class="grp"><label class="q">Are you currently following a structured plan?</label>
+          <label class="opt"><input type="radio" name="current"> Yes, training and nutrition</label>
+          <label class="opt"><input type="radio" name="current"> Yes, one of them</label>
+          <label class="opt"><input type="radio" name="current"> No, not right now</label>
+        </div>
+        <div class="grp"><label class="q">On a scale of 1 to 10, how ready do you feel to commit to change right now? <span class="req">*</span></label>
+          <select name="readiness" required><option value="" disabled selected>Select…</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option><option>10</option></select>
+        </div>
+
+        <div class="sec">In your words</div>
+        <div class="grp"><label class="q">Tell me a little about where you're at and what you're hoping for. What have you tried, and what feels like it's missing?</label><textarea name="message"></textarea></div>
+
+        <div class="sec">What's next</div>
+        <div class="grp"><label class="q">What would feel best as a next step? <span class="req">*</span></label>
+          <label class="opt"><input type="radio" name="next" required> A quick call to talk it through</label>
+          <label class="opt"><input type="radio" name="next"> A recommendation from Meghan by email</label>
+          <label class="opt"><input type="radio" name="next"> Just exploring for now</label>
+        </div>
+
+        <button type="submit" class="submit">Send</button>
+      </form>
+      <div class="apl-thanks" style="display:none;text-align:center;padding:36px 10px;">
+        <div style="font-family:'Playfair Display',serif;font-size:26px;margin-bottom:10px;">Thank you.</div>
+        <p style="color:var(--ink-soft);font-size:18px;line-height:1.6;">Meghan reads every one of these herself and will be in touch with the right next step.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LEAD CAPTURE MODAL -->
+<div class="modal-overlay" id="leadModal" onclick="if(event.target===this)closeLead()">
+  <div class="modal" style="max-width:470px;">
+    <button class="close" onclick="closeLead()" aria-label="Close">&times;</button>
+    <div class="eyebrow" id="leadEyebrow" style="color:var(--orange);margin-bottom:10px;"></div>
+    <h3 id="leadTitle"></h3>
+    <p id="leadBlurb" style="color:var(--ink-soft);font-size:18px;line-height:1.55;margin:8px 0 4px;"></p>
+    <form class="form col" style="margin-top:20px;" method="POST" action="/thank-you.html" data-netlify="true" netlify-honeypot="bot-field" name="Inquiry - Service Enquiry" >
+      <input type="hidden" name="form-name" value="Inquiry - Service Enquiry">
+      <input type="hidden" name="segment" value="Inquiry: Contact">
+      <input type="hidden" name="subject" value="New service enquiry">
+      <p style="display:none;"><label>Leave blank: <input name="bot-field"></label></p>
+      <input type="hidden" id="leadInterest" name="interest" value="">
+      <input type="text" name="first_name" placeholder="First name" required>
+      <input type="email" name="email" placeholder="Email address" required>
+      <button type="submit" class="btn fill" id="leadBtn">Submit</button>
+      <div class="thanks" style="display:none;margin-top:14px;text-align:center;"><div style="font-family:'Playfair Display',serif;font-size:22px;color:var(--ink);margin-bottom:4px;">Got it.</div><div style="color:var(--ink-soft);font-size:16px;line-height:1.5;">Meghan will be in touch soon with the right next step.</div></div>
+    </form>
+  </div>
+</div>
+
+<!-- INSTAGRAM FEED -->
+<section class="ig">
+  <div class="wrap" style="text-align:center;">
+    <a href="https://instagram.com/meghanelaynecoaching" target="_blank" class="eyebrow accent" style="display:inline-block;margin-bottom:14px;text-decoration:none;">@meghanelaynecoaching</a>
+    <h2 class="display lead">Follow along on <span class="accent">Instagram</span></h2>
+    <p style="margin:20px auto 0;color:var(--ink-soft);font-size:20px;max-width:520px;">Daily coaching, mindset shifts, and a little real talk. Come say hi.</p>
+  </div>
+  <div class="ig-grid">
+    <a class="ig-tile t1" href="https://instagram.com/meghanelaynecoaching" target="_blank"><span class="cap">If you've been doing everything right…</span><span class="igmark">⟶ View</span></a>
+    <a class="ig-tile t2" href="https://instagram.com/meghanelaynecoaching" target="_blank"><span class="cap">Anyone else use walking as therapy?</span><span class="igmark">⟶ View</span></a>
+    <a class="ig-tile t3" href="https://instagram.com/meghanelaynecoaching" target="_blank"><span class="cap">You're not stuck because you're unmotivated.</span><span class="igmark">⟶ View</span></a>
+    <a class="ig-tile t4" href="https://instagram.com/meghanelaynecoaching" target="_blank"><span class="cap">Strength &gt; shrinking.</span><span class="igmark">⟶ View</span></a>
+  </div>
+  <div style="text-align:center;margin-top:46px;">
+    <a href="https://instagram.com/meghanelaynecoaching" target="_blank" class="btn dark">Follow @meghanelaynecoaching</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="foot-logo"><span class="meg">Meghan</span><span class="el">Elayne</span></a>
+  <p class="foot-tag"><span style="font-style:normal;">The Embodied Method.</span><br>Strength, confidence, and ease in your body, for good.</p>
+  <nav class="foot-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="#membership">Work With Me</a>
+    <a href="membership.html">Membership</a>
+      <a href="private-coaching.html">Private Coaching</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="foot-divider"></div>
+  <div class="foot-copy">© 2026 Meghan Elayne Coaching · The Embodied Method · <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Privacy Policy</a></div>
+</footer>
+
+<script>
+  function openPricing(){document.getElementById('pricingModal').classList.add('open');document.body.style.overflow='hidden';}
+  function closePricing(){document.getElementById('pricingModal').classList.remove('open');document.body.style.overflow='';}
+  function openBooking(){closePricing();document.getElementById('bookModal').classList.add('open');document.body.style.overflow='hidden';}
+  function closeBooking(){document.getElementById('bookModal').classList.remove('open');document.body.style.overflow='';}
+  var leadCopy={
+    nutrition:{eyebrow:'Nutrition Strategy Call',title:'Book a strategy call',blurb:'Add your details and Meghan will be in touch to book your 90-minute session.',btn:'Request My Call'},
+    custom:{eyebrow:'Custom Training Program',title:'Get started',blurb:'Add your details and Meghan will reach out to set up your custom program.',btn:'Request My Program'}
+  };
+  function openLead(key){var c=leadCopy[key];var m=document.getElementById('leadModal');var f=m.querySelector('form');f.reset();f.querySelector('button[type=submit]').style.display='';f.querySelector('.thanks').style.display='none';document.getElementById('leadEyebrow').textContent=c.eyebrow;document.getElementById('leadTitle').textContent=c.title;document.getElementById('leadBlurb').textContent=c.blurb;document.getElementById('leadBtn').textContent=c.btn;document.getElementById('leadInterest').value=c.eyebrow;m.classList.add('open');document.body.style.overflow='hidden';}
+  function closeLead(){document.getElementById('leadModal').classList.remove('open');document.body.style.overflow='';}
+  function openApply(){var m=document.getElementById('applyModal');var f=document.getElementById('applyForm');if(f){f.style.display='';f.reset();m.querySelector('.apl-thanks').style.display='none';m.querySelector('.appform').scrollTop=0;}m.classList.add('open');document.body.style.overflow='hidden';}
+  function closeApply(){document.getElementById('applyModal').classList.remove('open');document.body.style.overflow='';}
+  var fitMap={nutrition:'Nutrition Strategy Call',custom:'Custom Training Program'};
+  function openFit(key){var m=document.getElementById('fitModal');var f=document.getElementById('fitForm');f.reset();f.style.display='';m.querySelector('.apl-thanks').style.display='none';m.querySelector('.appform').scrollTop=0;var val=fitMap[key]||'';document.getElementById('fitEntry').value=val;if(val){var r=f.querySelector('input[name=support][value="'+val+'"]');if(r)r.checked=true;}m.classList.add('open');document.body.style.overflow='hidden';}
+  function closeFit(){document.getElementById('fitModal').classList.remove('open');document.body.style.overflow='';}
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closePricing();closeBooking();closeLead();closeApply();closeFit();}});
+</script>
+<script>
+function submitForm(form){try{var p=new URLSearchParams();new FormData(form).forEach(function(v,k){p.append(k,v);});fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:p.toString()});}catch(e){}}
+</script>
+</body>
+</html>

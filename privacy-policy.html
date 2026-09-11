@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy · Meghan Elayne Coaching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{--black:#161412;--charcoal:#1c1a17;--cream:#ffffff;--cream-deep:#f5f3ee;--ink:#2a2722;--ink-soft:#4a463f;--orange:#c06a2c;--orange-light:#cf7d3a;--line:rgba(42,39,34,.16);}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{background:var(--cream);color:var(--ink);font-family:'Cormorant Garamond',Georgia,serif;-webkit-font-smoothing:antialiased;line-height:1.55;}
+  a{color:inherit;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 56px;}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:20px 56px;max-width:1280px;margin:0 auto;}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);}
+  .brand-mono{width:34px;height:34px;flex:none;border:1.5px solid var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:15px;line-height:1;color:var(--ink);}
+  .brand-mono em{font-style:italic;color:var(--orange);}
+  .brand-name{font-family:'Playfair Display',serif;text-transform:uppercase;letter-spacing:.16em;font-size:12px;color:var(--ink);line-height:1;}
+  .nav-links{display:flex;gap:34px;align-items:center;}
+  .nav-links a{text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:13px;font-weight:600;color:var(--ink);}
+  .nav-links a.cta{background:var(--ink);color:#fff;border:1px solid var(--ink);padding:10px 22px;}.nav-links a.cta:hover{background:var(--ink);color:#fff;}
+  .nav-burger{display:none;background:none;border:none;font-size:26px;line-height:1;color:var(--ink);cursor:pointer;padding:4px 6px;}
+
+  /* HEADER */
+  .pp-head{background:var(--black);color:#fff;text-align:center;padding:104px 24px 84px;}
+  .pp-head .eyebrow{text-transform:uppercase;letter-spacing:.34em;font-size:13px;font-weight:600;color:var(--orange-light);margin-bottom:18px;}
+  .pp-head h1{font-family:'Playfair Display',serif;font-weight:500;font-size:58px;line-height:1.05;}
+  .pp-head .updated{margin-top:18px;font-style:italic;font-size:17px;color:rgba(233,229,218,.7);}
+
+  /* BODY */
+  .pp-body{max-width:760px;margin:0 auto;padding:80px 24px 110px;}
+  .pp-note{background:var(--cream-deep);border-left:3px solid var(--orange);padding:20px 24px;font-size:17px;line-height:1.6;color:var(--ink-soft);margin-bottom:48px;}
+  .pp-body h2{font-family:'Playfair Display',serif;font-weight:500;font-size:27px;line-height:1.2;margin:44px 0 14px;color:var(--ink);}
+  .pp-body h2:first-of-type{margin-top:0;}
+  .pp-body p{font-size:18px;line-height:1.72;color:var(--ink-soft);margin-bottom:16px;}
+  .pp-body ul{list-style:none;margin:0 0 16px;}
+  .pp-body li{position:relative;padding:7px 0 7px 24px;font-size:18px;line-height:1.6;color:var(--ink-soft);}
+  .pp-body li:before{content:"";position:absolute;left:0;top:16px;width:6px;height:6px;border-radius:50%;background:var(--orange);}
+  .pp-body strong{color:var(--ink);}
+  .pp-body a{color:var(--orange);}
+
+  /* FOOTER */
+  footer{background:var(--black);color:var(--cream);padding:84px 0 46px;text-align:center;}
+  .foot-logo{font-family:'Playfair Display',serif;text-decoration:none;color:var(--cream);display:inline-block;line-height:1;}
+  .foot-logo .meg{text-transform:uppercase;letter-spacing:.14em;font-size:30px;}
+  .foot-logo .el{font-style:italic;font-size:32px;color:var(--orange-light);margin-left:.18em;}
+  .foot-tag{margin:20px auto 0;max-width:480px;color:rgba(233,229,218,.72);font-size:19px;line-height:1.6;font-style:italic;font-family:'Playfair Display',serif;padding:0 24px;}
+  .foot-nav{display:flex;justify-content:center;flex-wrap:wrap;gap:14px 32px;margin:36px 0 0;padding:0 20px;}
+  .foot-nav a{color:rgba(233,229,218,.82);text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:13px;font-weight:600;transition:.2s;}
+  .foot-nav a:hover{color:var(--orange-light);}
+  .foot-divider{width:60px;height:1px;background:rgba(233,229,218,.2);margin:42px auto;}
+  .foot-copy{margin-top:30px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:rgba(233,229,218,.5);}
+
+  @media(max-width:900px){.nav-burger{display:block;}.nav-inner{position:relative;}.nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;flex-direction:column;gap:0;align-items:stretch;padding:6px 0;border-bottom:1px solid var(--line);box-shadow:0 10px 24px rgba(0,0,0,.08);}.nav-links.open{display:flex;}.nav-links a{padding:13px 26px;width:100%;}.nav-links a.cta{border:none;padding:13px 26px;}.nav-inner{padding:18px 26px;}.pp-head h1{font-size:40px;}.brand-name{font-size:12px;letter-spacing:.1em;}}
+
+  @media(max-width:760px){
+    .pp-head h1{font-size:38px;}
+    .pp-head{padding:56px 24px;}.pp-body{padding:56px 22px;}
+    .wrap{padding:0 22px;}
+  }
+
+  /* ANNOUNCEMENT BAR */
+  .promo-bar{display:block;background:var(--orange);overflow:hidden;text-decoration:none;}
+  .promo-track{display:flex;width:max-content;animation:promo-scroll 32s linear infinite;}
+  .promo-track .u{flex:none;padding:10px 0;color:#fff;font-family:'Cormorant Garamond',serif;font-size:13px;text-transform:uppercase;letter-spacing:.22em;font-weight:600;white-space:nowrap;}
+  .promo-track .u i{font-style:normal;opacity:.6;margin:0 22px;}
+  .promo-bar:hover .promo-track{animation-play-state:paused;}
+  @keyframes promo-scroll{to{transform:translateX(-50%);}}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<section class="pp-head">
+  <div class="eyebrow">Legal</div>
+  <h1>Privacy Policy</h1>
+  <div class="updated">Last updated: June 27, 2026</div>
+</section>
+
+<!-- BODY -->
+<div class="pp-body">
+
+  <p>Meghan Elayne Coaching ("we," "us," or "our") respects your privacy and is committed to protecting the personal information you share with us. This Privacy Policy explains what information we collect, how we use and protect it, and the choices you have. It applies to this website and to the coaching, programs, and services we provide.</p>
+  <p>By using this website or providing us with your information, you agree to the practices described in this policy.</p>
+
+  <h2>Who we are</h2>
+  <p>This website is operated by Meghan Elayne Coaching, based in British Columbia, Canada. If you have any questions about this policy or your information, you can reach us at <a href="mailto:meghanelaynecoaching@gmail.com">meghanelaynecoaching@gmail.com</a>.</p>
+
+  <h2>Information we collect</h2>
+  <p>We collect information in a few ways:</p>
+  <p><strong>Information you provide to us.</strong> When you fill out a form, opt in to an email list, apply for coaching, book a class, or contact us, you may share:</p>
+  <ul>
+    <li>Your name, email address, and social media handle</li>
+    <li>Information about your goals, experience, and what kind of support you're looking for</li>
+    <li>Messages and any details you choose to include when you write to us</li>
+    <li>Payment details when you purchase a program or membership (processed securely by our payment provider, not stored by us)</li>
+  </ul>
+  <p><strong>Information collected automatically.</strong> Like most websites, we may automatically collect limited technical information such as your device type, browser, general location, pages visited, and how you arrived at the site, through cookies and similar technologies.</p>
+  <p><strong>Information from third parties.</strong> If you interact with us through a connected service (for example, our email platform, scheduling tool, or social media), we may receive information from that service in accordance with its own privacy settings.</p>
+
+  <h2>How we use your information</h2>
+  <p>We use the information we collect to:</p>
+  <ul>
+    <li>Respond to your enquiries and provide the coaching, programs, and services you request</li>
+    <li>Send you emails you've opted into, including newsletters, program information, and updates (you can unsubscribe at any time)</li>
+    <li>Process payments and manage your membership or program access</li>
+    <li>Match you to the right kind of support and personalise your experience</li>
+    <li>Improve our website, content, and services</li>
+    <li>Meet our legal and regulatory obligations</li>
+  </ul>
+
+  <h2>Sensitive information</h2>
+  <p>Some of the information you share with us, such as health, fitness, or wellbeing goals, may be personal in nature. We treat this information as confidential, use it only to provide and personalise your coaching, and do not share it except as described in this policy. Please share only what you're comfortable sharing.</p>
+
+  <h2>How we share your information</h2>
+  <p><strong>We do not sell your personal information.</strong> We share it only with trusted service providers who help us run our business, and only as needed to provide our services. These may include:</p>
+  <ul>
+    <li><strong>Email marketing</strong> (e.g., Flodesk) to manage email lists and send communications you've opted into</li>
+    <li><strong>Payment processing</strong> (e.g., Stripe) to securely handle purchases and subscriptions</li>
+    <li><strong>Program delivery</strong> (e.g., TrainHeroic and Skool) to deliver training, content, and community access</li>
+    <li><strong>Scheduling, forms, and analytics</strong> tools that help us book calls, collect responses, and understand site usage</li>
+  </ul>
+  <p>Each of these providers handles your information under its own privacy policy. We may also disclose information if required by law or to protect our legal rights.</p>
+
+  <h2>Cookies and tracking</h2>
+  <p>Our website may use cookies and similar technologies to keep the site working properly, remember your preferences, and understand how the site is used. You can control or disable cookies through your browser settings, though some features may not work as intended if you do.</p>
+
+  <h2>How we protect your information</h2>
+  <p>We take reasonable steps to protect your personal information from loss, misuse, and unauthorised access. No method of transmission or storage is completely secure, so while we work to safeguard your information, we cannot guarantee absolute security.</p>
+
+  <h2>How long we keep your information</h2>
+  <p>We keep your personal information only as long as needed to provide our services, comply with our legal obligations, resolve disputes, and enforce our agreements. When it is no longer needed, we securely delete or anonymise it.</p>
+
+  <h2>Your rights and choices</h2>
+  <p>Depending on where you live, you may have the right to:</p>
+  <ul>
+    <li>Access the personal information we hold about you</li>
+    <li>Ask us to correct or update inaccurate information</li>
+    <li>Ask us to delete your information, subject to legal limits</li>
+    <li>Withdraw your consent or unsubscribe from marketing emails at any time</li>
+  </ul>
+  <p>To make a request, email us at <a href="mailto:meghanelaynecoaching@gmail.com">meghanelaynecoaching@gmail.com</a>. You can unsubscribe from emails using the link at the bottom of any message. Canadian users can also learn more about their privacy rights through the Office of the Privacy Commissioner of Canada at <a href="https://www.priv.gc.ca" target="_blank" rel="noopener">priv.gc.ca</a>.</p>
+
+  <h2>Third-party links</h2>
+  <p>Our website and emails may link to other sites and platforms, such as Instagram, TrainHeroic, or Skool. We are not responsible for the privacy practices of those sites, and we encourage you to read their privacy policies.</p>
+
+  <h2>Children's privacy</h2>
+  <p>This website and our services are intended for adults. We do not knowingly collect personal information from anyone under the age of 18. If you believe a minor has provided us with information, please contact us and we will delete it.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>We may update this Privacy Policy from time to time. When we do, we'll revise the "Last updated" date at the top of this page. Significant changes may be communicated by email or a notice on the website.</p>
+
+  <h2>Contact us</h2>
+  <p>If you have questions about this Privacy Policy or how your information is handled, please reach out to us at <a href="mailto:meghanelaynecoaching@gmail.com">meghanelaynecoaching@gmail.com</a>.</p>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <a href="index.html" class="foot-logo"><span class="meg">Meghan</span><span class="el">Elayne</span></a>
+  <p class="foot-tag"><span style="font-style:normal;">The Embodied Method.</span><br>Strength, confidence, and ease in your body, for good.</p>
+  <nav class="foot-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="index.html#membership">Work With Me</a>
+    <a href="membership.html">Membership</a>
+      <a href="private-coaching.html">Private Coaching</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="foot-divider"></div>
+  <div class="foot-copy">© 2026 Meghan Elayne Coaching · The Embodied Method · <a href="privacy-policy.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;">Privacy Policy</a></div>
+</footer>
+
+</body>
+</html>

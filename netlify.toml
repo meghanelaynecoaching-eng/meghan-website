@@ -1,0 +1,7 @@
+# Netlify configuration for Meghan Elayne Coaching
+# The site is plain HTML in this folder, so there is no build step.
+# Netlify automatically finds the function in netlify/functions.
+
+[build]
+  publish = "."
+  functions = "netlify/functions"
